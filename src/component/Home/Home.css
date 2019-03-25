@@ -1,6 +1,6 @@
 .header-link {
   background-color: #caebf2;
-  font-size: calc(1px + 2vmin);
+  font-size: calc(5px + 2vmin);
   color: #ff3b3f;
   margin: 1%;
   float: right;
@@ -14,7 +14,21 @@
   float: left;
 }
 
-.card-body {
-  font-size: calc(25px + 2vmin);
+.form {
+  font-size: calc(10px + 2vmin);
+  color: grey;
+  font-family: 'Luckiest Guy', cursive;
+}
+.container {
+  font-size: calc(10px + 2vmin);
+  display: flex;
+  height: 500px;
   color: #ff3b3f;
+  border: solid grey;
+  border-width: 5px;
+  background-color: #caebf2;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  margin: 6%;
 }

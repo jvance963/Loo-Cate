@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Luckiest Guy', cursive;
 }
 
 .App-header {
@@ -11,10 +12,12 @@
   justify-content: spa;
   font-size: calc(10px + 2vmin);
   color: #a9a9a9;
+  font-family: 'Luckiest Guy', cursive;
 }
 
 .App-link {
   color: #ff3b3f;
+  font-family: 'Luckiest Guy', cursive;
 }
 
 html {
@@ -23,4 +26,5 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: 'Luckiest Guy', cursive;
 }

@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import Form from 'muicss/lib/react/form';
-import Input from 'muicss/lib/react/input';
-import Textarea from 'muicss/lib/react/textarea';
-import Button from 'muicss/lib/react/button';
+import {
+  Container,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Button,
+} from 'reactstrap';
 
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { username: '' };
+    this.state = { Where: '' };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -63,24 +68,35 @@ class Home extends Component {
             <Route path='/looCator' component={looCator} /> */}
           </header>
         </div>
-        <div className='card-body'>
-          <div className='card-body' style={{ textAlign: 'center' }} />
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type='text'
-              value={this.state.username}
-              onChange={this.handleChange}
-            />
-            <input type='submit' value='Submit' />
-          </form>
-        </div>
-        <Form>
-          <legend>Title</legend>
-          <Input placeholder='Input 1' />
-          <Input placeholder='Input 2' />
-          <Textarea placeholder='Textarea' />
-          <Button variant='raised'>Submit</Button>
-        </Form>
+        <Container className='container'>
+          <Form className='form'>
+            <Col>
+              <FormGroup>
+                <h2>Sign In</h2>
+                <Label>Email</Label>
+                <Input
+                  type='email'
+                  name='email'
+                  id='exampleEmail'
+                  placeholder='myemail@email.com'
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label for='examplePassword'>Password</Label>
+                <Input
+                  type='password'
+                  name='password'
+                  id='examplePassword'
+                  placeholder='********'
+                />
+              </FormGroup>
+            </Col>
+            <Button>Submit</Button>
+          </Form>
+        </Container>
+        ); } }
       </Router>
     );
   }
