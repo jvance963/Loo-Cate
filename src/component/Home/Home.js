@@ -25,22 +25,28 @@ class Home extends Component {
             <Container className='container'>
               <FormGroup>
                 <h2>Sign In</h2>
-                <Label>Email</Label>
-                <Input
-                  type='email'
-                  name='email'
-                  id='exampleEmail'
-                  placeholder='myemail@email.com'
-                />
+                <Label for='exampleSelect' sm={2}>
+                  Email
+                </Label>
+                <Col sm={10}>
+                  <Input
+                    type='email'
+                    name='email'
+                    id='exampleEmail'
+                    placeholder='myemail@email.com'
+                  />
+                </Col>
               </FormGroup>
               <FormGroup>
                 <Label for='examplePassword'>Password</Label>
-                <Input
-                  type='password'
-                  name='password'
-                  id='examplePassword'
-                  placeholder='********'
-                />
+                <Col md={10}>
+                  <Input
+                    type='password'
+                    name='password'
+                    id='examplePassword'
+                    placeholder='********'
+                  />
+                </Col>
               </FormGroup>
               <Button>Submit</Button>
             </Container>
