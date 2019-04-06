@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
 import {
   Container,
   Col,
@@ -7,70 +6,23 @@ import {
   FormGroup,
   Label,
   Input,
+  Card,
+  CardImg,
+  CardLink,
+  CardText,
+  CardImgOverlay,
   Button,
 } from 'reactstrap';
+import City from '../../Images/city.jpg';
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { Where: '' };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  handleSubmit(event) {
-    alert(this.state.username);
-    event.preventDefault();
-  }
-
   render() {
     return (
-      <Router>
-        <div className='App'>
-          <header className='App-header'>
-            <div>
-              <img src='' className='app-logo' alt='logo' />
-              <ul>
-                <Link className='header-link' to='/login'>
-                  Drop in
-                </Link>
-
-                <Link className='header-link' to='/signup'>
-                  Sign up
-                </Link>
-
-                <Link className='header-link' to='/help'>
-                  Help
-                </Link>
-
-                <Link className='header-link' to='/looHumor'>
-                  Loo Humor
-                </Link>
-
-                <Link className='header-link' to='/looCation'>
-                  Loo-Cation
-                </Link>
-
-                <Link className='header-link' to='/looCator'>
-                  Loo-Cator
-                </Link>
-              </ul>
-            </div>
-            {/* <Route exact path='/login' component={login} />
-            <Route path='/signup' component={signup} />
-            <Route path='/help' component={help} />
-            <Route path='/looHumor' component={looHumor} />
-            <Route path='/looCation' component={looCation} />
-            <Route path='/looCator' component={looCator} /> */}
-          </header>
-        </div>
-        <Container className='container'>
-          <Form className='form'>
-            <Col>
+      <div>
+        <Card inverse>
+          <CardImg width='100%' src={City} alt='Card image cap' />
+          <CardImgOverlay>
+            <Container className='container'>
               <FormGroup>
                 <h2>Sign In</h2>
                 <Label>Email</Label>
@@ -81,8 +33,6 @@ class Home extends Component {
                   placeholder='myemail@email.com'
                 />
               </FormGroup>
-            </Col>
-            <Col>
               <FormGroup>
                 <Label for='examplePassword'>Password</Label>
                 <Input
@@ -92,12 +42,11 @@ class Home extends Component {
                   placeholder='********'
                 />
               </FormGroup>
-            </Col>
-            <Button>Submit</Button>
-          </Form>
-        </Container>
-        ); } }
-      </Router>
+              <Button>Submit</Button>
+            </Container>
+          </CardImgOverlay>
+        </Card>
+      </div>
     );
   }
 }
