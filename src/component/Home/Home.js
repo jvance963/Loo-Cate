@@ -25,9 +25,7 @@ class Home extends Component {
             <Container className='container'>
               <FormGroup>
                 <h2>Sign In</h2>
-                <Label for='exampleSelect' sm={2}>
-                  Email
-                </Label>
+                <Label for='exampleSelect'>Email</Label>
                 <Col sm={10}>
                   <Input
                     type='email'
