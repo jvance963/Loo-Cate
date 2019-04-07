@@ -14,6 +14,7 @@ import {
   Button,
 } from 'reactstrap';
 import City from '../../Images/city.jpg';
+import '../Home/Home.css';
 
 class Home extends Component {
   render() {

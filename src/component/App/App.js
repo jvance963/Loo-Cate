@@ -1,22 +1,52 @@
 import React, { Component } from 'react';
-import './App.css';
-import '../Home/Home.css';
 import Home from '../Home/Home';
-import '../Header/Header.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import { Link, Route, Switch } from 'react-router-dom';
+import Loocate from '../Loocate/Loocate';
+import Loocation from '../Loocation/Loocation';
+import Humor from '../Humor/Humor';
+import Signup from '../Signup/Signup';
+import Login from '../Login/Login';
+import { Link, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
-    return (
+    const App = () => (
       <div>
         <Header />
-        <Home />
+        <Route exact path='/' component={Home} />
+        <Route path='/loocate' component={Loocate} />
+        <Route path='/loocation' component={Loocation} />
+        <Route path='/humor' component={Humor} />
+        <Route path='/signup' component={Signup} />
+        <Route path='/login' component={Login} />
+
         <Footer />
       </div>
     );
+    return (
+      // <div>
+      <App />
+      // </div>
+    );
   }
+
+  // render() {
+  //   return (
+  //     <div>
+  //       <Header />
+  //       <Switch>
+  //         <Route path='/' component={Home} />
+  //         <Route path='/loocate' component={Loocate} />
+  //         <Route path='/loocation' component={Loocation} />
+  //         <Route path='/humor' component={Humor} />
+  //         <Route path='/signup' component={Signup} />
+  //         <Route path='/login' component={Login} />
+  //       </Switch>
+  //       <Footer />
+  //     </div>
+  //   );
+  // }
 }
 
 export default App;

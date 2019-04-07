@@ -6,8 +6,8 @@ class Footer extends Component {
     return (
       <div>
         <section>
-          <div class='footerContainer'>
-            <div class='connect'>
+          <div className='footerContainer'>
+            <div className='connect'>
               <h4>Connect</h4>
               <ul />
             </div>
