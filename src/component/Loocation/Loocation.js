@@ -12,7 +12,6 @@ class Loocation extends Component {
       // this.props.setLoocation(newLoocation);
     });
   };
-
   render() {
     return (
       <div>

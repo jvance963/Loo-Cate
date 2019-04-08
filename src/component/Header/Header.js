@@ -9,38 +9,29 @@ class Header extends Component {
       <div className='header-container'>
         <div>
           <ul>
-            <li>
-              <Link className='header-link' to='/login'>
-                DROP IN
-              </Link>
-            </li>
+            <Link className='header-link' to='/login'>
+              DROP IN
+            </Link>
 
-            <li>
-              <Link className='header-link' to='/signup'>
-                SIGNUP
-              </Link>
-            </li>
-            <li>
-              <Link className='header-link' to='/humor'>
-                HUMOR
-              </Link>
-            </li>
+            <Link className='header-link' to='/signup'>
+              SIGNUP
+            </Link>
 
-            <li>
-              <Link className='header-link' to='/loocation'>
-                LOOCATION
-              </Link>
-            </li>
-            <li>
-              <Link className='header-link' to='/loocate'>
-                LOOCATE
-              </Link>
-            </li>
-            <li>
-              <Link className='app-logo' to='/'>
-                <img src={Logo} alt='loocate' />
-              </Link>
-            </li>
+            <Link className='header-link' to='/humor'>
+              HUMOR
+            </Link>
+
+            <Link className='header-link' to='/loocation'>
+              LOOCATION
+            </Link>
+
+            <Link className='header-link' to='/loocate'>
+              LOOCATE
+            </Link>
+
+            <Link className='app-logo' to='/'>
+              <img src={Logo} alt='loocate' />
+            </Link>
           </ul>
         </div>
       </div>
