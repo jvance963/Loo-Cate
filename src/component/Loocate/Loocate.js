@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map } from 'google-maps-react';
 import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import CurrentLocation from '../Map/Map';
 
 const mapStyles = {
   width: '100%',
@@ -32,15 +33,8 @@ export class Loocate extends Component {
 
   render() {
     return (
-      <Map
-        google={this.props.google}
-        zoom={14}
-        style={mapStyles}
-        initialCenter={{ lat: -1.2884, lng: 36.8233 }}>
-        <Marker
-          onClick={this.onMarkerClick}
-          name={'Kenyatta International Convention Centre'}
-        />
+      <CurrentLocation centerAroundCurrentLocation google={this.props.google}>
+        <Marker onClick={this.onMarkerClick} name={'current location'} />
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
@@ -49,7 +43,7 @@ export class Loocate extends Component {
             <h4>{this.state.selectedPlace.name}</h4>
           </div>
         </InfoWindow>
-      </Map>
+      </CurrentLocation>
     );
   }
 }
