@@ -34,7 +34,7 @@ class App extends Component {
   signupSubmit(e) {
     e.preventDefault();
     axios
-      .post(serverurl + '/users/signup', {
+      .post(serverUrl + '/users/signup', {
         email: this.state.email,
         password: this.state.password,
       })
@@ -48,7 +48,7 @@ class App extends Component {
   loginSubmit(e) {
     e.preventDefault();
     axios
-      .post(serverurl + '/users/login', {
+      .post(serverUrl + '/users/login', {
         email: this.state.email,
         password: this.state.password,
       })
