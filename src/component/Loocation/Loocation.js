@@ -17,7 +17,7 @@ import {
 } from 'reactstrap';
 
 const geoMap =
-  'https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,MountainView,CA&key=AIzaSyAVTIzc3qTmxDnp_tKDkIG4lYa-lmOlbD0 ';
+  'https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,MountainView,CA&key=AIzaSyAVTIzc3qTmxDnp_tKDkIG4lYa-lmOlbD0';
 
 class Loocation extends Component {
   geoCall = () => {
@@ -27,6 +27,7 @@ class Loocation extends Component {
       // this.props.setLoocation(newLoocation);
     });
   };
+
   render() {
     return (
       <div>

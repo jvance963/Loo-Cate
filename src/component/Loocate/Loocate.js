@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Map } from 'google-maps-react';
 import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from '../Map/Map';
+import SearchBar from '../GeoSearch/GeoSearch';
 
 const mapStyles = {
   width: '100%',
