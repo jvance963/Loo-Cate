@@ -9,7 +9,7 @@ class Header extends Component {
       <div className='header-container'>
         <div>
           <ul>
-            <Link className='header-link' onclick='openForm()'>
+            <Link className='header-link' to='/login'>
               DROP IN
             </Link>
 
