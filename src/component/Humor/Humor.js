@@ -19,11 +19,11 @@ class Humor extends Component {
   render() {
     return (
       <div>
-        <Card inverse>
-          <CardImg width='100%' src={Bathroom} alt='Card image cap' />
-          <CardImgOverlay>
-            <Container className='container'>
-              <FormGroup>
+        {/* <Card inverse> */}
+        <CardImg width='100%' src={Bathroom} alt='Card image cap' />
+        {/* <CardImgOverlay> */}
+        {/* <Container className='container'> */}
+        {/* <FormGroup>
                 <h2>Enter a Loocation</h2>
                 <Label for='exampleSelect'>Name of Loocation</Label>
                 <Col sm={10}>
@@ -34,8 +34,8 @@ class Humor extends Component {
                     placeholder='myemail@email.com'
                   />
                 </Col>
-              </FormGroup>
-              <FormGroup>
+              </FormGroup> */}
+        {/* <FormGroup>
                 <Label for='examplePassword'>Street</Label>
                 <Col md={10}>
                   <Input
@@ -45,8 +45,8 @@ class Humor extends Component {
                     placeholder='********'
                   />
                 </Col>
-              </FormGroup>
-              <FormGroup>
+              </FormGroup> */}
+        {/* <FormGroup>
                 <Label for='examplePassword'>City</Label>
                 <Col md={10}>
                   <Input
@@ -56,8 +56,8 @@ class Humor extends Component {
                     placeholder='********'
                   />
                 </Col>
-              </FormGroup>
-              <FormGroup>
+              </FormGroup> */}
+        {/* <FormGroup>
                 <Label for='examplePassword'>State/Province</Label>
                 <Col md={10}>
                   <Input
@@ -68,10 +68,10 @@ class Humor extends Component {
                   />
                 </Col>
               </FormGroup>
-              <Button onClick={this.geoCall}>Submit</Button>
-            </Container>
-          </CardImgOverlay>
-        </Card>
+              <Button onClick={this.geoCall}>Submit</Button> */}
+        {/* </Container> */}
+        {/* </CardImgOverlay> */}
+        {/* </Card> */}
       </div>
     );
   }

@@ -1,0 +1,12 @@
+.login-container {
+  font-size: calc(10px + 2vmin);
+  display: inline;
+  color: grey;
+  border: solid grey;
+  border-width: 5px;
+  background-color: #caebf2;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Luckiest Guy', cursive;
+}

@@ -21,11 +21,11 @@ class Home extends Component {
     return (
       <div>
         <Card inverse>
-          <CardImg width='100%' src={City} alt='Card image cap' />
+          <CardImg width='100%' src={City} height='750' alt='Card image cap' />
           <CardImgOverlay>
             <Container className='container'>
               <FormGroup>
-                <h2>Sign In</h2>
+                <h2>Drop In</h2>
                 <Label for='exampleSelect'>Email</Label>
                 <Col sm={10}>
                   <Input

@@ -1,53 +1,70 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import axios from 'axios';
+import {
+  Container,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Card,
+  CardImg,
+  CardLink,
+  CardText,
+  CardImgOverlay,
+  Button,
+} from 'reactstrap';
+
+import Sign from '../../Images/sign.jpg';
 import './Login.css';
 
 class Login extends Component {
-  redirect() {
-    //   return <Redirect to='/' />;
-    // }
-    // componentDidMount() {
-    //   console.log('hello1');
-    //   axios
-    //     .get(
-    //       'https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyCnsa_PqPVrCNM2BLxZdSWK2cveWBTJTgA'
-    //     )
-    //     .then(res => {
-    //       console.log('hello');
-    //       console.log(res);
-    //     });
+  constructor() {
+    super();
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+  }
+
+  redirect() {
+    return <Redirect to='/' />;
+  }
   render() {
     return (
-      <div className='LogIn'>
-        <h1>Log In</h1>
-        <div className='form-container'>
-          <form onSubmit={this.props.loginSubmit}>
-            <p>
-              <label>Email:</label>
-              <input
-                className='loginInput'
-                name='email'
-                type='text'
-                onChange={this.props.inputChanger}
-              />
-            </p>
-            <p>
-              <label>Password:</label>
-              <input
-                className='loginInput'
-                name='password'
-                type='password'
-                onChange={this.props.inputChanger}
-              />
-            </p>
-            <input type='submit' value='Submit' />
-          </form>
-        </div>
-        {this.props.isLoggedIn ? this.redirect() : null}
-      </div>
+      <Card inverse>
+        <CardImg width='100%' src={Sign} height='750' alt='Card image cap' />
+        <CardImgOverlay>
+          <Container className='container'>
+            <FormGroup>
+              <h2>Drop In</h2>
+              <Label for='exampleSelect'>Email</Label>
+              <Col sm={10}>
+                <Input
+                  type='email'
+                  name='email'
+                  id='exampleEmail'
+                  placeholder='myemail@email.com'
+                />
+              </Col>
+            </FormGroup>
+            <FormGroup>
+              <Label for='examplePassword'>Password</Label>
+              <Col md={10}>
+                <Input
+                  type='password'
+                  name='password'
+                  id='examplePassword'
+                  placeholder='********'
+                />
+              </Col>
+            </FormGroup>
+            <Button>Submit</Button>
+          </Container>
+        </CardImgOverlay>
+      </Card>
     );
   }
 }

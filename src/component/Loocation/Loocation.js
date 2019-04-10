@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import bathroom from '../../Images/bathroom.jpg';
+import '../Loocate/Loocate.css';
 import {
   Container,
   Col,
@@ -32,17 +33,17 @@ class Loocation extends Component {
     return (
       <div>
         <Card inverse>
-          <CardImg width='100%' src={bathroom} alt='Card image cap' />
+          <CardImg src={bathroom} alt='Card image cap' />
           <CardImgOverlay>
-            <Container className='container'>
+            <Container className='loocation-container'>
               <FormGroup>
                 <h2>Enter a Loocation</h2>
                 <Label for='exampleSelect'>Name of Loocation</Label>
                 <Col sm={10}>
                   <Input
-                    type='email'
-                    name='email'
-                    id='exampleEmail'
+                    type='name'
+                    name='name'
+                    id='examplename'
                     placeholder='myemail@email.com'
                   />
                 </Col>
@@ -51,10 +52,10 @@ class Loocation extends Component {
                 <Label for='examplePassword'>Street</Label>
                 <Col md={10}>
                   <Input
-                    type='password'
-                    name='password'
-                    id='examplePassword'
-                    placeholder='********'
+                    type='Street'
+                    name='Street'
+                    id='text'
+                    placeholder='1133 15th St'
                   />
                 </Col>
               </FormGroup>
@@ -62,10 +63,10 @@ class Loocation extends Component {
                 <Label for='examplePassword'>City</Label>
                 <Col md={10}>
                   <Input
-                    type='password'
-                    name='password'
-                    id='examplePassword'
-                    placeholder='********'
+                    type='City'
+                    name='City'
+                    id='text'
+                    placeholder='Northwest'
                   />
                 </Col>
               </FormGroup>
@@ -73,10 +74,10 @@ class Loocation extends Component {
                 <Label for='examplePassword'>State/Province</Label>
                 <Col md={10}>
                   <Input
-                    type='password'
-                    name='password'
-                    id='examplePassword'
-                    placeholder='********'
+                    type='state'
+                    name='state'
+                    id='text'
+                    placeholder='Washington D.C.'
                   />
                 </Col>
               </FormGroup>

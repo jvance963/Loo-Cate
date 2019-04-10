@@ -11,16 +11,17 @@
     "react-bootstrap": "^1.0.0-beta.6",
     "react-dom": "^16.8.5",
     "react-geocode": "^0.1.2",
+    "react-google-autocomplete": "^1.0.18",
+    "react-google-maps": "^9.4.5",
+    "react-google-maps-loader": "^4.2.5",
     "react-load-script": "0.0.6",
     "react-materialize": "^3.0.2",
-    "react-places-autocomplete": "^7.2.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "reactstrap": "^7.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "start": "node index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

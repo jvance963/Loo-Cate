@@ -1,7 +1,7 @@
 .card-img-overlay {
   font-size: calc(10px + 2vmin);
   display: flex;
-  height: 500px;
+  height: 450px;
   color: grey;
   border: solid grey;
   border-width: 5px;
@@ -9,6 +9,6 @@
   width: 30%;
   align-items: center;
   justify-content: center;
-  margin: 6%;
+  margin: 12%;
   font-family: 'Luckiest Guy', cursive;
 }

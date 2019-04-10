@@ -9,7 +9,7 @@ import Signup from '../Signup/Signup';
 import Login from '../Login/Login';
 import axios from 'axios';
 import serverUrl from '../constants';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -76,11 +76,60 @@ class App extends Component {
       this.setState({
         isLoggedIn: true,
       });
+    } else {
+      this.setState({
+        isLoggedIn: false,
+      });
     }
+  }
+  handleInput(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  handleSignUp(e) {
+    e.preventDefault();
+    axios
+      .post(serverUrl + '/users/signup', {
+        email: this.state.email,
+        password: this.state.password,
+      })
+      .then(response => {
+        localStorage.token = response.data.token;
+        this.setState({ isLoggedIn: true });
+        this.props.history.push('/');
+      })
+      .catch(err => console.log(err));
+  }
+
+  handleLogOut() {
+    this.setState({
+      email: '',
+      password: '',
+      isLoggedIn: false,
+    });
+    localStorage.clear();
+    this.props.history.push('/users/login');
+  }
+
+  handleLogIn(e) {
+    e.preventDefault();
+    axios
+      .post(serverUrl + '/users/login', {
+        email: this.state.email,
+        password: this.state.password,
+      })
+      .then(response => {
+        localStorage.token = response.data.token;
+        this.setState({ isLoggedIn: true });
+        this.props.history.push('/');
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
-    const App = () => (
+    return (
       <div>
         <Header />
         <Route exact path='/' component={Home} />
@@ -92,25 +141,8 @@ class App extends Component {
         <Footer />
       </div>
     );
-    return;
+    return <App />;
   }
-
-  // render() {
-  //   return (
-  //     <div>
-  //       <Header />
-  //       <Switch>
-  //         <Route path='/' component={Home} />
-  //         <Route path='/loocate' component={Loocate} />
-  //         <Route path='/loocation' component={Loocation} />
-  //         <Route path='/humor' component={Humor} />
-  //         <Route path='/signup' component={Signup} />
-  //         <Route path='/login' component={Login} />
-  //       </Switch>
-  //       <Footer />
-  //     </div>
-  //   );
-  // }
 }
 
 export default App;
