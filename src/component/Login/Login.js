@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import {
   Container,
   Col,
@@ -19,19 +19,19 @@ import Sign from '../../Images/sign.jpg';
 import './Login.css';
 
 class Login extends Component {
-  constructor() {
-    super();
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  // constructor() {
+  //   super();
+  //   this.handleSubmit = this.handleSubmit.bind(this);
+  // }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    const data = new FormData(event.target);
-  }
+  // handleSubmit(event) {
+  //   event.preventDefault();
+  //   const data = new FormData(event.target);
+  // }
 
-  redirect() {
-    return <Redirect to='/' />;
-  }
+  // redirect() {
+  //   return <Redirect to='/' />;
+  // }
   render() {
     return (
       <Card inverse>
@@ -47,6 +47,7 @@ class Login extends Component {
                   name='email'
                   id='exampleEmail'
                   placeholder='myemail@email.com'
+                  onChange={this.props.handleInput}
                 />
               </Col>
             </FormGroup>
@@ -58,10 +59,11 @@ class Login extends Component {
                   name='password'
                   id='examplePassword'
                   placeholder='********'
+                  onChange={this.props.handleInput}
                 />
               </Col>
             </FormGroup>
-            <Button>Submit</Button>
+            <Button onClick={this.props.handleLogIn}>Submit</Button>
           </Container>
         </CardImgOverlay>
       </Card>

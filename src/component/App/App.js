@@ -12,19 +12,17 @@ import serverUrl from '../constants';
 import { Link, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
-  constructor() {
-    super();
-
+  constructor(props) {
+    super(props);
     this.state = {
       email: '',
       password: '',
       isLoggedIn: false,
     };
-
-    this.inputChanger = this.inputChanger.bind(this);
-    this.signupSubmit = this.signupSubmit.bind(this);
-    this.loginSubmit = this.loginSubmit.bind(this);
-    this.logoutSubmit = this.logoutSubmit.bind(this);
+    this.handleLogOut = this.handleLogOut.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.handleLogIn = this.handleLogIn.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
   }
 
   inputChanger(e) {
@@ -131,13 +129,61 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <Route exact path='/' component={Home} />
-        <Route path='/loocate' component={Loocate} />
-        <Route path='/loocation' component={Loocation} />
-        <Route path='/humor' component={Humor} />
-        <Route path='/signup' component={Signup} />
-        <Route path='/login' component={Login} />
+        <Header
+          isLoggedIn={this.state.isLoggedIn}
+          handleLogOut={this.handleLogOut}
+        />
+        <Route
+          exact
+          path='/'
+          render={props => (
+            <Home {...props} isLoggedIn={this.state.isLoggedIn} />
+          )}
+        />
+        <Route
+          path='/loocate'
+          render={props => (
+            <Loocate {...props} isLoggedIn={this.state.isLoggedIn} />
+          )}
+        />
+        <Route
+          path='/loocation'
+          crender={props => (
+            <Loocation {...props} isLoggedIn={this.state.isLoggedIn} />
+          )}
+        />
+        <Route
+          path='/humor'
+          render={props => (
+            <Humor {...props} isLoggedIn={this.state.isLoggedIn} />
+          )}
+        />
+        <Route
+          path='/signup'
+          render={props => {
+            return (
+              <Signup
+                {...props}
+                isLoggedIn={this.state.isLoggedIn}
+                handleInput={this.handleInput}
+                handleSignUp={this.handleSignUp}
+              />
+            );
+          }}
+        />
+        <Route
+          path='/login'
+          render={props => {
+            return (
+              <Login
+                {...props}
+                isLoggedIn={this.state.isLoggedIn}
+                handleInput={this.handleInput}
+                handleLogIn={this.handleLogIn}
+              />
+            );
+          }}
+        />
         <Footer />
       </div>
     );
