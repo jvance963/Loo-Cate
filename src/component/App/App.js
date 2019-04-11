@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import Home from '../Home/Home';
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import Loocate from '../Loocate/Loocate';
 import Loocation from '../Loocation/Loocation';
 import Humor from '../Humor/Humor';
 import Signup from '../Signup/Signup';
 import Login from '../Login/Login';
+import LogOut from '../Logout/Logout';
 import axios from 'axios';
-import serverUrl from '../constants';
+// import serverUrl from '../constants';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -44,21 +45,22 @@ class App extends Component {
 
   handleSignUp(e) {
     e.preventDefault();
-    localStorage.setItem('username', this.state.email);
     axios
-      .post(serverUrl + '/users/signup', {
+      .post('http://localhost:3001/users/signup', {
         email: this.state.email,
         password: this.state.password,
       })
       .then(response => {
         localStorage.token = response.data.token;
         this.setState({ isLoggedIn: true });
-        this.props.history.push('/');
+        console.log('User has signed up');
+        this.props.history.push('/loocation');
       })
       .catch(err => console.log(err));
   }
 
-  handleLogOut() {
+  handleLogOut(e) {
+    e.preventDefault();
     this.setState({
       email: '',
       password: '',
@@ -66,21 +68,21 @@ class App extends Component {
     });
     localStorage.clear();
     console.log('User has been logged out');
-    this.props.history.push('/users/login');
+    this.props.history.push('/login');
   }
 
   handleLogIn(e) {
     e.preventDefault();
-    localStorage.setItem('username', this.state.email);
     axios
-      .post(serverUrl + '/users/login', {
+      .post('http://localhost:3001/users/login', {
         email: this.state.email,
         password: this.state.password,
       })
       .then(response => {
         localStorage.token = response.data.token;
         this.setState({ isLoggedIn: true });
-        this.props.history.push('/');
+        console.log('User is logged in');
+        this.props.history.push('/loocation');
       })
       .catch(err => console.log(err));
   }
@@ -88,31 +90,30 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header
-          isLoggedIn={this.state.isLoggedIn}
-          handleLogOut={this.handleLogOut}
-        />
+        <Header />
         <Route
           exact
           path='/'
           render={props => (
-            <Home {...props} isLoggedIn={this.state.isLoggedIn} />
+            <Home
+              {...props}
+              isLoggedIn={this.state.isLoggedIn}
+              handleSignUp={this.handleSignUp}
+              handleLogOut={this.handleLogOut}
+            />
           )}
         />
         <Route
+          exact
           path='/loocate'
           render={props => (
             <Loocate {...props} isLoggedIn={this.state.isLoggedIn} />
           )}
         />
-        <Route path='/loocation' component={Loocation} />
-        {/* <Route
-          path='/loocation'
-          crender={props => (
-            <Loocation {...props} isLoggedIn={this.state.isLoggedIn} />
-          )}
-        /> */}
+        <Route exact path='/loocation' component={Loocation} />
+
         <Route
+          exact
           path='/humor'
           render={props => (
             <Humor {...props} isLoggedIn={this.state.isLoggedIn} />
@@ -120,6 +121,7 @@ class App extends Component {
         />
 
         <Route
+          exact
           path='/signup'
           render={props => {
             return (
@@ -128,11 +130,26 @@ class App extends Component {
                 isLoggedIn={this.state.isLoggedIn}
                 handleInput={this.handleInput}
                 handleSignUp={this.handleSignUp}
+                handleLogOut={this.handleLogOut}
               />
             );
           }}
         />
         <Route
+          exact
+          path='/logout'
+          render={props => {
+            return (
+              <LogOut
+                {...props}
+                isLoggedIn={this.state.isLoggedIn}
+                handleLogOut={this.handleLogOut}
+              />
+            );
+          }}
+        />
+        <Route
+          exact
           path='/login'
           render={props => {
             return (
@@ -145,11 +162,10 @@ class App extends Component {
             );
           }}
         />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
-    return <App />;
   }
 }
 
-export default App;
+export default withRouter(App);

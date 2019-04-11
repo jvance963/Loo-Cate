@@ -16,6 +16,7 @@
     "react-google-maps-loader": "^4.2.5",
     "react-load-script": "0.0.6",
     "react-materialize": "^3.0.2",
+    "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "reactstrap": "^7.1.0"

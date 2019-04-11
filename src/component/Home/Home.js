@@ -14,42 +14,13 @@ import {
   Button,
 } from 'reactstrap';
 import City from '../../Images/city.jpg';
-import '../Home/Home.css';
 
 class Home extends Component {
   render() {
     return (
       <div>
         <Card inverse>
-          <CardImg width='100%' src={City} height='750' alt='Card image cap' />
-          <CardImgOverlay>
-            <Container className='container'>
-              <FormGroup>
-                <h2>Drop In</h2>
-                <Label for='exampleSelect'>Email</Label>
-                <Col sm={10}>
-                  <Input
-                    type='email'
-                    name='email'
-                    id='exampleEmail'
-                    placeholder='myemail@email.com'
-                  />
-                </Col>
-              </FormGroup>
-              <FormGroup>
-                <Label for='examplePassword'>Password</Label>
-                <Col md={10}>
-                  <Input
-                    type='password'
-                    name='password'
-                    id='examplePassword'
-                    placeholder='********'
-                  />
-                </Col>
-              </FormGroup>
-              <Button>Submit</Button>
-            </Container>
-          </CardImgOverlay>
+          <CardImg width='100%' src={City} height='650' alt='Card image cap' />
         </Card>
       </div>
     );

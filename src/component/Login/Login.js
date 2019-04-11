@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Redirect } from 'react-router-dom';
 import {
   Container,
   Col,
@@ -22,7 +21,7 @@ class Login extends Component {
   render() {
     return (
       <Card inverse>
-        <CardImg width='100%' src={Sign} height='750' alt='Card image cap' />
+        <CardImg width='100%' src={Sign} alt='Card image cap' />
         <CardImgOverlay>
           <Container className='container'>
             <FormGroup>
