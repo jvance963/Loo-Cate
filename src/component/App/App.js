@@ -9,7 +9,7 @@ import Signup from '../Signup/Signup';
 import Login from '../Login/Login';
 import axios from 'axios';
 import serverUrl from '../constants';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -23,50 +23,6 @@ class App extends Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleLogIn = this.handleLogIn.bind(this);
     this.handleSignUp = this.handleSignUp.bind(this);
-  }
-
-  inputChanger(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-
-  signupSubmit(e) {
-    e.preventDefault();
-    axios
-      .post(serverUrl + '/users/signup', {
-        email: this.state.email,
-        password: this.state.password,
-      })
-      .then(res => {
-        localStorage.token = res.data.token;
-        this.setState({ isLoggedIn: true });
-      })
-      .catch(err => console.log(err));
-  }
-
-  loginSubmit(e) {
-    e.preventDefault();
-    axios
-      .post(serverUrl + '/users/login', {
-        email: this.state.email,
-        password: this.state.password,
-      })
-      .then(res => {
-        localStorage.token = res.data.token;
-
-        this.setState({
-          isLoggedIn: true,
-        });
-      })
-      .catch(err => console.log(err));
-  }
-
-  logoutSubmit() {
-    this.setState({
-      email: '',
-      password: '',
-      isLoggedIn: false,
-    });
-    localStorage.clear();
   }
 
   componentDidMount() {
@@ -88,6 +44,7 @@ class App extends Component {
 
   handleSignUp(e) {
     e.preventDefault();
+    localStorage.setItem('username', this.state.email);
     axios
       .post(serverUrl + '/users/signup', {
         email: this.state.email,
@@ -108,11 +65,13 @@ class App extends Component {
       isLoggedIn: false,
     });
     localStorage.clear();
+    console.log('User has been logged out');
     this.props.history.push('/users/login');
   }
 
   handleLogIn(e) {
     e.preventDefault();
+    localStorage.setItem('username', this.state.email);
     axios
       .post(serverUrl + '/users/login', {
         email: this.state.email,
@@ -146,18 +105,20 @@ class App extends Component {
             <Loocate {...props} isLoggedIn={this.state.isLoggedIn} />
           )}
         />
-        <Route
+        <Route path='/loocation' component={Loocation} />
+        {/* <Route
           path='/loocation'
           crender={props => (
             <Loocation {...props} isLoggedIn={this.state.isLoggedIn} />
           )}
-        />
+        /> */}
         <Route
           path='/humor'
           render={props => (
             <Humor {...props} isLoggedIn={this.state.isLoggedIn} />
           )}
         />
+
         <Route
           path='/signup'
           render={props => {

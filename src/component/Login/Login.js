@@ -19,19 +19,6 @@ import Sign from '../../Images/sign.jpg';
 import './Login.css';
 
 class Login extends Component {
-  // constructor() {
-  //   super();
-  //   this.handleSubmit = this.handleSubmit.bind(this);
-  // }
-
-  // handleSubmit(event) {
-  //   event.preventDefault();
-  //   const data = new FormData(event.target);
-  // }
-
-  // redirect() {
-  //   return <Redirect to='/' />;
-  // }
   render() {
     return (
       <Card inverse>
