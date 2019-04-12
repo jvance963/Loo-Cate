@@ -20,7 +20,7 @@ class Home extends Component {
     return (
       <div>
         <Card inverse>
-          <CardImg width='100%' src={City} height='650' alt='Card image cap' />
+          <CardImg width='100%' src={City} height='660' alt='Card image cap' />
         </Card>
       </div>
     );
