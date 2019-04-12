@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import serverUrl from '../constants';
 import bathroom from '../../Images/bathroom.jpg';
 import {
   Container,
@@ -11,8 +9,6 @@ import {
   Input,
   Card,
   CardImg,
-  CardLink,
-  CardText,
   CardImgOverlay,
   Button,
 } from 'reactstrap';
@@ -35,31 +31,26 @@ class AddressForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleNameInput(e) {
-    console.log(e.target.value);
     this.setState({
       name: e.target.value,
     });
   }
   handleStreetInput(e) {
-    console.log('Thanks');
     this.setState({
       street: e.target.value,
     });
   }
   handleCityInput(e) {
-    console.log('Thanks');
     this.setState({
       city: e.target.value,
     });
   }
   handleStateInput(e) {
-    console.log('Thanks');
     this.setState({
       state: e.target.value,
     });
   }
   handleZipCodeInput(e) {
-    console.log('Thanks');
     this.setState({
       zipCode: e.target.value,
     });
@@ -75,7 +66,16 @@ class AddressForm extends Component {
     const State = this.state.state.trim();
     const ZipCode = this.state.zipCode.trim();
     const NewCall =
-      baseURL + streetString + ',' + City + ',' + State + '&key=' + APIKey;
+      baseURL +
+      streetString +
+      ',' +
+      City +
+      ',' +
+      State +
+      '' +
+      ZipCode +
+      '&key=' +
+      APIKey;
     console.log(NewCall);
     this.props.geoCall(NewCall);
   }

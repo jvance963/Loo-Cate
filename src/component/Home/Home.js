@@ -1,18 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Container,
-  Col,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  Card,
-  CardImg,
-  CardLink,
-  CardText,
-  CardImgOverlay,
-  Button,
-} from 'reactstrap';
+import { Card, CardImg } from 'reactstrap';
 import City from '../../Images/city.jpg';
 
 class Home extends Component {

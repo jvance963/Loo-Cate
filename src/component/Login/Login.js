@@ -2,14 +2,11 @@ import React, { Component } from 'react';
 import {
   Container,
   Col,
-  Form,
   FormGroup,
   Label,
   Input,
   Card,
   CardImg,
-  CardLink,
-  CardText,
   CardImgOverlay,
   Button,
 } from 'reactstrap';

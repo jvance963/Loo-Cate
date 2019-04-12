@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Map } from 'google-maps-react';
 import axios from 'axios';
 import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from '../Map/Map';
@@ -13,9 +12,8 @@ export class Loocate extends Component {
   };
   componentDidMount() {
     axios
-      .get('http://localhost:3001/loocations')
+      .get(serverUrl + '/loocations')
       .then(response => {
-        let arr = [];
         console.log(response);
         markers = response.result;
         // this.setState({ markers: response.result });

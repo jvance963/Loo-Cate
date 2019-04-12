@@ -9,7 +9,7 @@ import Signup from '../Signup/Signup';
 import Login from '../Login/Login';
 import LogOut from '../Logout/Logout';
 import axios from 'axios';
-// import serverUrl from '../constants';
+import serverUrl from '../constants';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -46,7 +46,7 @@ class App extends Component {
   handleSignUp(e) {
     e.preventDefault();
     axios
-      .post('http://localhost:3001/users/signup', {
+      .post(serverUrl + '/users/signup', {
         email: this.state.email,
         password: this.state.password,
       })
@@ -74,7 +74,7 @@ class App extends Component {
   handleLogIn(e) {
     e.preventDefault();
     axios
-      .post('http://localhost:3001/users/login', {
+      .post(serverUrl + '/users/login', {
         email: this.state.email,
         password: this.state.password,
       })
@@ -162,7 +162,6 @@ class App extends Component {
             );
           }}
         />
-        {/* <Footer /> */}
       </div>
     );
   }
