@@ -21,51 +21,28 @@ class Humor extends Component {
           <CardImgOverlay>
             <Container className='container'>
               <FormGroup>
-                <h2>Enter a Loocation</h2>
-                <Label for='exampleSelect'>Name of Loocation</Label>
+                <Label for='exampleSelect' />
                 <Col sm={10}>
                   <Input
                     type='email'
                     name='email'
                     id='exampleEmail'
-                    placeholder='myemail@email.com'
+                    placeholder='Title of Post'
                   />
                 </Col>
               </FormGroup>
               <FormGroup>
-                <Label for='examplePassword'>Street</Label>
+                <Label for='examplePassword' />
                 <Col md={10}>
                   <Input
                     type='password'
                     name='password'
                     id='examplePassword'
-                    placeholder='********'
+                    placeholder='Something Funny'
                   />
                 </Col>
               </FormGroup>
-              <FormGroup>
-                <Label for='examplePassword'>City</Label>
-                <Col md={10}>
-                  <Input
-                    type='password'
-                    name='password'
-                    id='examplePassword'
-                    placeholder='********'
-                  />
-                </Col>
-              </FormGroup>
-              <FormGroup>
-                <Label for='examplePassword'>State/Province</Label>
-                <Col md={10}>
-                  <Input
-                    type='password'
-                    name='password'
-                    id='examplePassword'
-                    placeholder='********'
-                  />
-                </Col>
-              </FormGroup>
-              <Button onClick={this.geoCall}>Submit</Button>
+              <Button>Submit</Button>
             </Container>
           </CardImgOverlay>
         </Card>

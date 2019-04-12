@@ -23,6 +23,7 @@ class AddressForm extends Component {
       state: '',
       zipCode: '',
     };
+
     this.handleNameInput = this.handleNameInput.bind(this);
     this.handleStreetInput = this.handleStreetInput.bind(this);
     this.handleCityInput = this.handleCityInput.bind(this);
